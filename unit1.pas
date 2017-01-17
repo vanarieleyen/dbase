@@ -5,9 +5,9 @@ unit Unit1;
 interface
 
 uses
-  unit3,
+  db, unit2,
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, EditBtn,
-  StdCtrls, Grids, LazLogger, strutils, iconvenc;
+  StdCtrls, Grids, LazLogger, strutils, iconvenc, lazutf8;
 
 type
     PseudoStr = ARRAY[1..255] OF Char;
@@ -35,8 +35,6 @@ type
 
 var
   Form1: TForm1;
-  dbfile: file;
-  DB : dbfRecord;
 
 implementation
 
@@ -48,33 +46,57 @@ implementation
 procedure TForm1.Button1Click(Sender: TObject);
 var
   i, r: integer;
-  s, str: string;
+  s, str, naam: string;
+  database: TDBFdatabase;
 begin
-	with DB do begin
-   	FileName := FileNameEdit1.FileName;
-     	OpenDbf(DB);
-      StringGrid1.ColCount := NumFields;
-      FOR i := 1 TO NumFields DO BEGIN
-         StringGrid1.Cells[i-1,0] := Fields^[i].Name;
-      end;
-     	r := 1;
-     	WHILE r <= NumRecs DO BEGIN
-     		GetDbfRecord(DB, r);
-      	FOR i := 1 TO NumFields DO BEGIN
-				SetString(s, @CurRecord^[Fields^[i].Off] , Fields^[i].Len);
-            StringGrid1.RowCount := r+1;
-            IConvert(s,str,'gb18030','utf8');
-         	StringGrid1.Cells[i-1,r] := str;
-         end;
-         r := r+1;
-      END;
-      Label4.Caption := DateOfUpdate;
-      Label6.Caption := IntToStr(NumRecs);
-      Label8.Caption := IntToStr(HeadLen);
-      Label10.Caption := IntToStr(RecLen);
+   database := TDBFdatabase.Create;
+   database.Open(FileNameEdit1.FileName);
+
+   Label4.Caption := database.DateOfUpdate;
+   Label6.Caption := IntToStr(database.NumRecs);
+   Label8.Caption := IntToStr(database.HeadLen);
+   Label10.Caption := IntToStr(database.RecLen);
+
+   StringGrid1.ColCount := database.NumFields;
+   StringGrid1.RowCount := database.NumRecs+1;
+
+   // set fieldnames
+   for i := 0 to database.NumFields-1 do begin
+      StringGrid1.Cells[i, 0] := database.fielddev[i].name;
    end;
-   //DebugLn(dbgs(header));
+
+   // read each record
+   r := 1;
+   WHILE r <= database.NumRecs DO BEGIN
+
+      // get fieldvalue based on fieldname and recno
+      DebugLn( database.GetField('WGLO', r) );
+
+      FOR i := 0 TO database.NumFields-1 DO BEGIN
+       	StringGrid1.Cells[i,r] := database.GetFieldNr(i, r);
+      end;
+      r := r+1;
+   END;
+
+    database.SetField('PH', 1, 'test');
+
+{
+   // search example (gives index of record)
+   debugLn( inttostr(database.Locate('PH', 'COCO')) );
+
+   	// fill remaining with spaces
+   str := 'A';
+   for i:=4-Length(str) downto 1 do
+     str := str + 'X';
+
+   s := '1234567890';
+	// move the string to the database
+   for i:= 1 to Length(str) do
+     s[i+3] := str[i];
+}
+   DebugLn(s);
 end;
+
 
 end.
 
