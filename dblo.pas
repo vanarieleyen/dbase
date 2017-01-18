@@ -374,25 +374,24 @@ PROCEDURE CloseDbf(VAR D : dbfRecord);
 CONST EofMark : Byte = $1A;
   PROCEDURE UpdateHeader(VAR D : dbfRecord);
   VAR
-    Reg : Registers;
     r   : longint;
+    YY,MM,DD : Word;
   BEGIN
     r := D.NumRecs;
-    Reg.AX := $2A00;
-    Intr($21, Reg);
+    DeCodeDate (Date,YY,MM,DD);
     IF D.HeadProlog[0] = DB2File THEN
     BEGIN
-      D.HeadProlog[5] := Reg.CX-1900; {Year}
-      D.HeadProlog[3] := Reg.DH; {Month}
-      D.HeadProlog[4] := Reg.DL; {Day}
+      D.HeadProlog[5] := YY;
+      D.HeadProlog[3] := MM;
+      D.HeadProlog[4] := DD; //Reg.DL; {Day}
       D.HeadProlog[2] := r div 256;
       r := r - (D.HeadProlog[5]*256);
       D.HeadProlog[1] := r;
     END ELSE
     BEGIN
-      D.HeadProlog[1] := Reg.CX-1900; {Year}
-      D.HeadProlog[2] := Reg.DH; {Month}
-      D.HeadProlog[3] := Reg.DL; {Day}
+      D.HeadProlog[1] := YY;
+      D.HeadProlog[2] := MM;
+      D.HeadProlog[3] := DD;
       D.HeadProlog[7] := r div 16777216;
       r := r - (D.HeadProlog[7]*16777216);
       D.HeadProlog[6] := r div 65536;

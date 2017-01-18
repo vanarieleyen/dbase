@@ -21,13 +21,17 @@ database.Open(FileName);
 
 GetField(fieldname; recno)	: returns content of field
 GetFieldNr(fieldnr; recno) : returns content of field
-SetField(fieldname; recno; value) : updates the value in a field (opens and closes the file)
+SetField(fieldname; recno; value) : updates the value in a field (disk + memory)
 Locate(fieldname; needle) : returns location or 0 when not found
+Delete(recno) : deletes a record (sets the deleteflag)
+Append() : append an empty record (disk + memory)
 
 note:
 	on open() the data is read from hd to memory and the dbf file is closed
 	GetField[Nr] and Locate use the data from memory
    SetField updates the data in memory, opens the dbf file for update and closes it afterwards
+   Delete(nr) only sets the delete flag, opens the dbf file for update and closes it afterwards
+   Append() appends an empty record on disk and memory
 ******************************************************************************)
 
 type
@@ -57,6 +61,8 @@ type
          function GetFieldNr(nr: integer; recno: integer): string;
          function Locate(field: string; needle: string): integer;
          procedure SetField(name: string; recno: integer; value: string);
+         procedure Delete(recno: integer);
+         procedure Append();
    end;
 
 implementation
@@ -179,6 +185,37 @@ begin
    end;
    IConvert(needle, str, 'utf8','gb18030');
    Result := ceil(Pos(str, fieldval[i])/fielddev[i].length);
+end;
+
+// delete a record
+procedure TDBFdatabase.Delete(recno: integer);
+VAR
+  Result : Integer;
+  delflag: Byte;
+begin
+   delflag := Byte('*');
+   OpenDbf(DBASE);
+   seek(DBASE.dFile, DBASE.HeadLen+(recno-1)*DBASE.RecLen);
+   BlockWrite(DBASE.dFile, delflag, 1, Result);
+   CloseDbf(DBASE);
+end;
+
+// append an empty record
+procedure TDBFdatabase.Append();
+var
+  i, j: integer;
+begin
+   FOR i := 0 TO numfields-1 DO BEGIN   			// add empty record in memory
+      FOR j := 0 TO DBASE.Fields^[i+1].Len DO
+	      fieldval[i] := fieldval[i] + ' ';
+   end;
+   NumRecs := NumRecs + 1;
+
+   // add an empty record on disk
+   OpenDbf(DBASE);
+   FillChar(DBASE.CurRecord^, DBASE.RecLen, ' ');
+   AppendDbf(DBASE);
+   CloseDbf(DBASE);
 end;
 
 

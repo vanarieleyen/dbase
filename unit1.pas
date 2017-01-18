@@ -57,6 +57,12 @@ begin
    //database.SetField('ITEMS', 1, '      411');
    //database.SetField('HDHI', 1, '             85.00');
 
+   // example: delete a record
+   //database.Delete(2);
+
+   // example: append an empty record
+   //database.Append();
+
    Label4.Caption := database.DateOfUpdate;
    Label6.Caption := IntToStr(database.NumRecs);
    Label8.Caption := IntToStr(database.HeadLen);
