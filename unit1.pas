@@ -5,7 +5,7 @@ unit Unit1;
 interface
 
 uses
-  db, unit2,
+  dblo, dbhi,
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, EditBtn,
   StdCtrls, Grids, LazLogger, strutils, iconvenc, lazutf8;
 
@@ -52,6 +52,11 @@ begin
    database := TDBFdatabase.Create;
    database.Open(FileNameEdit1.FileName);
 
+   // example: update the first record
+   //database.SetField('PH', 1, '1 长城（132醇味）威版');
+   //database.SetField('ITEMS', 1, '      411');
+   //database.SetField('HDHI', 1, '             85.00');
+
    Label4.Caption := database.DateOfUpdate;
    Label6.Caption := IntToStr(database.NumRecs);
    Label8.Caption := IntToStr(database.HeadLen);
@@ -69,8 +74,8 @@ begin
    r := 1;
    WHILE r <= database.NumRecs DO BEGIN
 
-      // get fieldvalue based on fieldname and recno
-      DebugLn( database.GetField('WGLO', r) );
+      // example: get fieldvalue based on fieldname and recno
+      //DebugLn( database.GetField('WGLO', r) );
 
       FOR i := 0 TO database.NumFields-1 DO BEGIN
        	StringGrid1.Cells[i,r] := database.GetFieldNr(i, r);
@@ -78,23 +83,9 @@ begin
       r := r+1;
    END;
 
-    database.SetField('PH', 1, 'test');
 
-{
-   // search example (gives index of record)
-   debugLn( inttostr(database.Locate('PH', 'COCO')) );
 
-   	// fill remaining with spaces
-   str := 'A';
-   for i:=4-Length(str) downto 1 do
-     str := str + 'X';
-
-   s := '1234567890';
-	// move the string to the database
-   for i:= 1 to Length(str) do
-     s[i+3] := str[i];
-}
-   DebugLn(s);
+   //DebugLn(s);
 end;
 
 

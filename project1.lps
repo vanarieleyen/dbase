@@ -3,13 +3,13 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="9">
+    <Units Count="8">
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos Y="20"/>
-        <UsageCount Value="65"/>
+        <CursorPos Y="15"/>
+        <UsageCount Value="74"/>
       </Unit0>
       <Unit1>
         <Filename Value="unit1.pas"/>
@@ -18,36 +18,38 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <TopLine Value="65"/>
-        <CursorPos X="14" Y="81"/>
-        <UsageCount Value="65"/>
+        <TopLine Value="62"/>
+        <CursorPos X="18" Y="77"/>
+        <UsageCount Value="74"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
-        <Filename Value="db.pas"/>
+        <Filename Value="dblo.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="474"/>
-        <CursorPos X="7" Y="496"/>
-        <UsageCount Value="40"/>
+        <TopLine Value="263"/>
+        <CursorPos X="18" Y="300"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
+        <Filename Value="dbhi.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="139"/>
+        <CursorPos X="61" Y="154"/>
+        <UsageCount Value="44"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
         <Filename Value="unit3.pas"/>
         <UnitName Value="Unit3"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="285"/>
         <CursorPos X="5" Y="308"/>
-        <UsageCount Value="38"/>
-      </Unit3>
-      <Unit4>
-        <Filename Value="unit2.pas"/>
-        <UnitName Value="Unit2"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="5"/>
-        <CursorPos X="16" Y="18"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="37"/>
       </Unit4>
       <Unit5>
         <Filename Value="/usr/local/codetyphon/typhon/components/BaseUtils/lconvencoding.pas"/>
@@ -55,155 +57,98 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="69"/>
         <CursorPos X="10" Y="84"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
       </Unit5>
       <Unit6>
         <Filename Value="/usr/local/codetyphon/fpcsrc/rtl/objpas/sysutils/sysencodingh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="79"/>
         <CursorPos X="36" Y="93"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
       </Unit6>
       <Unit7>
         <Filename Value="/usr/local/codetyphon/fpcsrc/rtl/inc/heaph.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="72"/>
         <CursorPos X="10" Y="92"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
       </Unit7>
-      <Unit8>
-        <Filename Value="unit2.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="Unit2"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="133"/>
-        <CursorPos X="5" Y="147"/>
-        <UsageCount Value="35"/>
-        <Loaded Value="True"/>
-      </Unit8>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="14" HistoryIndex="13">
       <Position1>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="32" Column="36" TopLine="16"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="82" TopLine="56"/>
       </Position1>
       <Position2>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="73" Column="23" TopLine="48"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="98" TopLine="72"/>
       </Position2>
       <Position3>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="80" Column="8" TopLine="57"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="84" Column="7" TopLine="58"/>
       </Position3>
       <Position4>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="8" Column="45"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="86" Column="11" TopLine="60"/>
       </Position4>
       <Position5>
         <Filename Value="unit1.pas"/>
-        <Caret Line="73" TopLine="61"/>
+        <Caret Line="73" Column="14" TopLine="60"/>
       </Position5>
       <Position6>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="86" Column="34" TopLine="67"/>
+        <Filename Value="dblo.pas"/>
+        <Caret Line="314" Column="17" TopLine="298"/>
       </Position6>
       <Position7>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="33" Column="33" TopLine="17"/>
+        <Filename Value="dblo.pas"/>
+        <Caret Line="322" Column="10" TopLine="298"/>
       </Position7>
       <Position8>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="78" Column="50" TopLine="57"/>
+        <Filename Value="dblo.pas"/>
+        <Caret Line="483" Column="32" TopLine="457"/>
       </Position8>
       <Position9>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="107" TopLine="79"/>
+        <Filename Value="dblo.pas"/>
+        <Caret Line="484" Column="55" TopLine="458"/>
       </Position9>
       <Position10>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="101" Column="49" TopLine="77"/>
+        <Filename Value="dblo.pas"/>
+        <Caret Line="532" Column="62" TopLine="507"/>
       </Position10>
       <Position11>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="104" Column="47" TopLine="80"/>
+        <Filename Value="dblo.pas"/>
+        <Caret Line="533" Column="30" TopLine="508"/>
       </Position11>
       <Position12>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="107" Column="70" TopLine="80"/>
+        <Filename Value="dblo.pas"/>
+        <Caret Line="300" Column="18" TopLine="294"/>
       </Position12>
       <Position13>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="82" Column="6" TopLine="56"/>
+        <Filename Value="dblo.pas"/>
+        <Caret Line="304" Column="11" TopLine="294"/>
       </Position13>
       <Position14>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="85" Column="32" TopLine="60"/>
+        <Filename Value="dblo.pas"/>
+        <Caret Line="485" Column="28" TopLine="459"/>
       </Position14>
-      <Position15>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="107" Column="19" TopLine="80"/>
-      </Position15>
-      <Position16>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="96" Column="52" TopLine="80"/>
-      </Position16>
-      <Position17>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="60" Column="33" TopLine="40"/>
-      </Position17>
-      <Position18>
-        <Filename Value="db.pas"/>
-        <Caret Line="531" Column="42" TopLine="555"/>
-      </Position18>
-      <Position19>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="51" Column="20" TopLine="41"/>
-      </Position19>
-      <Position20>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="139" Column="54" TopLine="123"/>
-      </Position20>
-      <Position21>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="140" Column="13" TopLine="124"/>
-      </Position21>
-      <Position22>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="132" TopLine="124"/>
-      </Position22>
-      <Position23>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="91" Column="15" TopLine="62"/>
-      </Position23>
-      <Position24>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="147" TopLine="123"/>
-      </Position24>
-      <Position25>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="146" Column="50" TopLine="129"/>
-      </Position25>
-      <Position26>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="132" Column="15" TopLine="131"/>
-      </Position26>
-      <Position27>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="81" Column="31" TopLine="65"/>
-      </Position27>
-      <Position28>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="147" Column="10" TopLine="131"/>
-      </Position28>
-      <Position29>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="148" Column="6" TopLine="131"/>
-      </Position29>
-      <Position30>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="149" Column="51" TopLine="133"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="2">
+      <Item1>
+        <Kind Value="bpkData"/>
+        <WatchData Value="database"/>
+        <WatchScope Value="wpsGlobal"/>
+        <WatchKind Value="wpkRead"/>
+        <InitialEnabled Value="False"/>
+      </Item1>
+      <Item2>
+        <Kind Value="bpkData"/>
+        <WatchData Value="database"/>
+        <WatchScope Value="wpsGlobal"/>
+        <WatchKind Value="wpkWrite"/>
+        <InitialEnabled Value="False"/>
+      </Item2>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>
