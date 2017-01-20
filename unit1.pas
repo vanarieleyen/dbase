@@ -7,7 +7,7 @@ interface
 uses
   dblo, dbhi,
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, EditBtn,
-  StdCtrls, Grids, LazLogger, strutils, iconvenc, lazutf8;
+  StdCtrls, Grids, LazLogger, strutils, lazutf8;
 
 type
     PseudoStr = ARRAY[1..255] OF Char;
@@ -50,7 +50,7 @@ var
   database: TDBFdatabase;
 begin
    database := TDBFdatabase.Create;
-   database.Open(FileNameEdit1.FileName);
+	database.Open(FileNameEdit1.FileName);
 
    // example: update the first record
    //database.SetField('PH', 1, '1 长城（132醇味）威版');
@@ -62,6 +62,8 @@ begin
 
    // example: append an empty record
    //database.Append();
+
+   database.Empty();
 
    Label4.Caption := database.DateOfUpdate;
    Label6.Caption := IntToStr(database.NumRecs);
@@ -89,7 +91,7 @@ begin
       r := r+1;
    END;
 
-
+   database.Free;
 
    //DebugLn(s);
 end;
