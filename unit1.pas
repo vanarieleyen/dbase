@@ -63,7 +63,7 @@ begin
    // example: append an empty record
    //database.Append();
 
-   database.Empty();
+   //database.Empty();
 
    Label4.Caption := database.DateOfUpdate;
    Label6.Caption := IntToStr(database.NumRecs);

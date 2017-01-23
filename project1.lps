@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectSession>
-    <Version Value="9"/>
+    <Version Value="10"/>
     <BuildModes Active="Default">
       <SessionMatrixOptions Count="1">
         <Item1 ID="170400425490" Modes="Default" Type="IDEMacro" MacroName="LCLWidgetType" Value="gtk2"/>
@@ -22,8 +22,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <TopLine Value="48"/>
-        <CursorPos X="21" Y="66"/>
+        <TopLine Value="67"/>
+        <CursorPos X="21" Y="48"/>
         <UsageCount Value="78"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -31,19 +31,19 @@
       <Unit2>
         <Filename Value="dblo.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="591"/>
-        <CursorPos X="9" Y="617"/>
+        <CursorPos X="9" Y="595"/>
         <UsageCount Value="53"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="dbhi.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="168"/>
-        <CursorPos X="52" Y="182"/>
+        <TopLine Value="80"/>
+        <CursorPos X="29" Y="109"/>
         <UsageCount Value="48"/>
         <Loaded Value="True"/>
       </Unit3>
